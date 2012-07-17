@@ -1,6 +1,6 @@
 Name:		nepomuk-core
 Summary:	Nepomuk core utilities and libraries
-Version:	4.8.95
+Version:	4.8.97
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -10,9 +10,9 @@ Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{name}-%{version}.ta
 BuildRequires:	kde4-macros
 BuildRequires:	kdelibs4-devel
 BuildRequires:	doxygen
-BuildRequires:	soprano-devel >= 4:2.7.57
-BuildRequires:	strigi-devel >= 0.7.3
-BuildRequires:	shared-desktop-ontologies-devel >= 0.9
+BuildRequires:	pkgconfig(soprano) >= 2.7.57
+BuildRequires:	pkgconfig(libstreams) >= 0.7.3
+BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.9
 Requires:	shared-desktop-ontologies >= 0.9
 Requires:	soprano >= 4:2.7.57
 Conflicts:	kdebase4-runtime < 1:4.8.80
