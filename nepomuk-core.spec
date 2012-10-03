@@ -1,12 +1,12 @@
 Name:		nepomuk-core
 Summary:	Nepomuk core utilities and libraries
-Version:	4.9.0
-Release:	1
+Version: 4.9.2
+Release: 1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
 URL:		http://www.kde.org
-Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{name}-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kde4-macros
 BuildRequires:	kdelibs4-devel
 BuildRequires:	doxygen
