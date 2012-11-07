@@ -1,6 +1,6 @@
 Name:		nepomuk-core
 Summary:	Nepomuk core utilities and libraries
-Version: 4.9.2
+Version: 4.9.3
 Release: 1
 Epoch:		1
 Group:		Graphical desktop/KDE
