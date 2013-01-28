@@ -28,7 +28,7 @@ BuildRequires:	pkgconfig(libpostproc)
 BuildRequires:	pkgconfig(libswresample)
 BuildRequires:	pkgconfig(libswscale)
 BuildRequires:	pkgconfig(exiv2)
-BuildRequires:	pkgconfig(poppler)
+BuildRequires:	pkgconfig(poppler) pkgconfig(poppler-qt4)
 BuildRequires:	pkgconfig(taglib)
 Requires:	shared-desktop-ontologies >= 0.9
 Requires:	soprano >= 4:2.7.57
