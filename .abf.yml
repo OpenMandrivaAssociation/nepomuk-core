@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   nepomuk-core-4.9.4.tar.xz: f48b29dbbaec3938930176d3225fe292c26c9fce
+sources:
+  nepomuk-core-4.9.98.tar.xz: 4f6ffd6ecaea5bde2c031b71168756793f957011

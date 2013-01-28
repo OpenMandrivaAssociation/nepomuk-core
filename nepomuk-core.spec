@@ -1,18 +1,32 @@
 Name:		nepomuk-core
 Summary:	Nepomuk core utilities and libraries
-Version:	4.9.4
+Version:	4.9.98
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
 URL:		http://www.kde.org
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %is_beta
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Source:		ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kde4-macros
 BuildRequires:	kdelibs4-devel
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(soprano) >= 2.7.57
 BuildRequires:	pkgconfig(libstreams) >= 0.7.3
 BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.9
+BuildRequires:	pkgconfig(libavcodec)
+BuildRequires:	pkgconfig(libavdevice)
+BuildRequires:	pkgconfig(libavfilter)
+BuildRequires:	pkgconfig(libavformat)
+BuildRequires:	pkgconfig(libavutil)
+BuildRequires:	pkgconfig(libpostproc)
+BuildRequires:	pkgconfig(libswresample)
+BuildRequires:	pkgconfig(libswscale)
 Requires:	shared-desktop-ontologies >= 0.9
 Requires:	soprano >= 4:2.7.57
 Conflicts:	kdebase4-runtime < 1:4.8.80
@@ -30,11 +44,14 @@ Nepomuk core utilities and libraries.
 %{_kde_bindir}/nepomuk*
 %{_kde_datadir}/autostart/*.desktop
 %{_kde_datadir}/ontology/kde/*
-%{_kde_libdir}/kde4/nepomukbackupsync.so
 %{_kde_libdir}/kde4/nepomukfileindexer.so
 %{_kde_libdir}/kde4/nepomukfilewatch.so
-%{_kde_libdir}/kde4/nepomukqueryservice.so
 %{_kde_libdir}/kde4/nepomukstorage.so
+%{_kde_libdir}/kde4/nepomukexiv2extractor.so
+%{_kde_libdir}/kde4/nepomukffmpegextractor.so
+%{_kde_libdir}/kde4/nepomukplaintextextractor.so
+%{_kde_libdir}/kde4/nepomukpopplerextractor.so
+%{_kde_libdir}/kde4/nepomuktaglibextractor.so
 %{_kde_libdir}/libkdeinit4_nepomukserver.so
 %{_kde_libdir}/libnepomukcommon.so
 %{_kde_services}/*.desktop
@@ -44,11 +61,17 @@ Nepomuk core utilities and libraries.
 
 %define nepomukcore_major 4
 %define libnepomukcore %mklibname nepomukcore %{nepomukcore_major}
+%if %{nepomukcore_major} != 4
+Please remove all references to libnepomuksync below -- we are not compatible
+with it in any way, so we should not claim we are its successor.
+%endif
+%define libnepomuksync %mklibname nepomuksync %{nepomukcore_major}
 
 %package -n %{libnepomukcore}
 Summary:	Nepomuk core library
 Group:		System/Libraries
 Requires:	%{name} = %{EVRD}
+%rename %libnepomuksync
 
 %description -n %{libnepomukcore}
 Nepomuk core library.
@@ -58,26 +81,10 @@ Nepomuk core library.
 
 #----------------------------------------------------------------------------------
 
-%define nepomuksync_major 4
-%define libnepomuksync %mklibname nepomuksync %{nepomuksync_major}
-
-%package -n %{libnepomuksync}
-Summary:	Nepomuk core library
-Group:		System/Libraries
-Requires:	%{name} = %{EVRD}
-
-%description -n %{libnepomuksync}
-Nepomuk core library.
-
-%files -n %{libnepomuksync}
-%{_kde_libdir}/libnepomuksync.so.%{nepomuksync_major}*
-
-#----------------------------------------------------------------------------------
-
 %package devel
 Summary:	Development files for %{name}
 Group:		Development/KDE and Qt
-Requires:	%{libnepomuksync} = %{EVRD}
+Requires:	%{libnepomukcore} = %{EVRD}
 Requires:	%{libnepomukcore} = %{EVRD}
 Conflicts:	kdebase4-runtime-devel < 1:4.8.80
 
@@ -89,7 +96,6 @@ that use Nepomuk.
 %{_kde_includedir}/nepomuk2
 %{_kde_includedir}/Nepomuk2
 %{_kde_libdir}/libnepomukcore.so
-%{_kde_libdir}/libnepomuksync.so
 %{_libdir}/cmake/NepomukCore/*.cmake
 
 #----------------------------------------------------------------------------------
