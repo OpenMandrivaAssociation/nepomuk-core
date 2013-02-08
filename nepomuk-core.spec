@@ -1,13 +1,13 @@
 Name:		nepomuk-core
 Summary:	Nepomuk core utilities and libraries
-Version:	4.9.98
+Version:	4.10.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
 URL:		http://www.kde.org
 %define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %is_beta
+%if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
@@ -74,7 +74,7 @@ with it in any way, so we should not claim we are its successor.
 Summary:	Nepomuk core library
 Group:		System/Libraries
 Requires:	%{name} = %{EVRD}
-%rename %libnepomuksync
+%rename %{libnepomuksync}
 
 %description -n %{libnepomukcore}
 Nepomuk core library.
@@ -87,7 +87,6 @@ Nepomuk core library.
 %package devel
 Summary:	Development files for %{name}
 Group:		Development/KDE and Qt
-Requires:	%{libnepomukcore} = %{EVRD}
 Requires:	%{libnepomukcore} = %{EVRD}
 Conflicts:	kdebase4-runtime-devel < 1:4.8.80
 
@@ -113,6 +112,12 @@ that use Nepomuk.
 %makeinstall_std -C build
 
 %changelog
+* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
+- New version 4.10.0
+- Obsolete libnepomuksync subpackage
+- Add more BuildRequires
+- Update files
+
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.9.4-1
 - New version 4.9.4
 
