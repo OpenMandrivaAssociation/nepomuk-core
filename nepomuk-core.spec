@@ -57,6 +57,7 @@ Nepomuk core utilities and libraries.
 %{_kde_libdir}/kde4/nepomuktaglibextractor.so
 %{_kde_libdir}/libkdeinit4_nepomukserver.so
 %{_kde_libdir}/libnepomukcommon.so
+%{_kde_libdir}/libnepomukextractor.so
 %{_kde_services}/*.desktop
 %{_kde_servicetypes}/*.desktop
 
@@ -114,6 +115,7 @@ that use Nepomuk.
 %changelog
 * Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.3-1
 - New version 4.10.3
+- Update files
 
 * Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.2-1
 - New version 4.10.2
