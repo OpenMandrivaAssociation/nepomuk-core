@@ -1,6 +1,6 @@
 Name:		nepomuk-core
 Summary:	Nepomuk core utilities and libraries
-Version:	4.10.3
+Version:	4.10.4
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -113,6 +113,9 @@ that use Nepomuk.
 %makeinstall_std -C build
 
 %changelog
+* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.4-1
+- New version 4.10.4
+
 * Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.3-1
 - New version 4.10.3
 - Update files
