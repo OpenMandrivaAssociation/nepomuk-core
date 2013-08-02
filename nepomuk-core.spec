@@ -1,18 +1,18 @@
-Name:		nepomuk-core
 Summary:	Nepomuk core utilities and libraries
+Name:		nepomuk-core
 Version:	4.10.5
-Release:	1
+Release:	2
 Epoch:		1
-Group:		Graphical desktop/KDE
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
-URL:		http://www.kde.org
-%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+Group:		Graphical desktop/KDE
+Url:		http://www.kde.org
+%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Source:		ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kde4-macros
 BuildRequires:	kdelibs4-devel
 BuildRequires:	doxygen
@@ -28,7 +28,8 @@ BuildRequires:	pkgconfig(libpostproc)
 BuildRequires:	pkgconfig(libswresample)
 BuildRequires:	pkgconfig(libswscale)
 BuildRequires:	pkgconfig(exiv2)
-BuildRequires:	pkgconfig(poppler) pkgconfig(poppler-qt4)
+BuildRequires:	pkgconfig(poppler)
+BuildRequires:	pkgconfig(poppler-qt4)
 BuildRequires:	pkgconfig(taglib)
 Requires:	shared-desktop-ontologies >= 0.9
 Requires:	soprano >= 4:2.7.57
