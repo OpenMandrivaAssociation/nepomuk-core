@@ -52,9 +52,6 @@ Nepomuk core utilities and libraries.
 %{_kde_bindir}/nepomuk*
 %{_kde_datadir}/autostart/*.desktop
 %{_kde_datadir}/ontology/kde/*
-%{_kde_libdir}/kde4/nepomukfileindexer.so
-%{_kde_libdir}/kde4/nepomukfilewatch.so
-%{_kde_libdir}/kde4/nepomukstorage.so
 %{_kde_libdir}/kde4/nepomukepubextractor.so
 %{_kde_libdir}/kde4/nepomukexiv2extractor.so
 %{_kde_libdir}/kde4/nepomukffmpegextractor.so
