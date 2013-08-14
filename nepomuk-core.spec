@@ -87,10 +87,26 @@ Nepomuk core library.
 
 #----------------------------------------------------------------------------------
 
+%define nepomukcleaner_major 4
+%define libnepomukcleaner %mklibname nepomukcleaner %{nepomukcleaner_major}
+
+%package -n %{libnepomukcleaner}
+Summary:	Nepomuk cleaner library
+Group:		System/Libraries
+
+%description -n %{libnepomukcleaner}
+Nepomuk cleaner library.
+
+%files -n %{libnepomukcleaner}
+%{_kde_libdir}/libnepomukcleaner.so.%{nepomukcleaner_major}*
+
+#----------------------------------------------------------------------------------
+
 %package devel
 Summary:	Development files for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libnepomukcore} = %{EVRD}
+Requires:	%{libnepomukcleaner} = %{EVRD}
 Conflicts:	kdebase4-runtime-devel < 1:4.8.80
 
 %description devel
@@ -101,6 +117,7 @@ that use Nepomuk.
 %{_kde_includedir}/nepomuk2
 %{_kde_includedir}/Nepomuk2
 %{_kde_libdir}/libnepomukcore.so
+%{_kde_libdir}/libnepomukcleaner.so
 %{_libdir}/cmake/NepomukCore
 
 #----------------------------------------------------------------------------------
@@ -118,6 +135,7 @@ that use Nepomuk.
 * Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
 - New version 4.11.0
 - Add ebook-tools-devel to BuildRequires
+- New subpackage for libnepomukcleaner
 
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.5-1
 - New version 4.10.5
