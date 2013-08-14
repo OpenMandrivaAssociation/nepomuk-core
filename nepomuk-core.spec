@@ -13,12 +13,13 @@ Url:		http://www.kde.org
 %define ftpdir stable
 %endif
 Source0:	ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kde4-macros
-BuildRequires:	kdelibs4-devel
 BuildRequires:	doxygen
+BuildRequires:	kde4-macros
+BuildRequires:	ebook-tools-devel
+BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(soprano) >= 2.7.57
 BuildRequires:	pkgconfig(libstreams) >= 0.7.3
-BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.9
+BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.11
 BuildRequires:	pkgconfig(libavcodec)
 BuildRequires:	pkgconfig(libavdevice)
 BuildRequires:	pkgconfig(libavfilter)
@@ -31,7 +32,7 @@ BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(poppler)
 BuildRequires:	pkgconfig(poppler-qt4)
 BuildRequires:	pkgconfig(taglib)
-Requires:	shared-desktop-ontologies >= 0.9
+Requires:	shared-desktop-ontologies >= 0.11
 Requires:	soprano >= 4:2.7.57
 Conflicts:	kdebase4-runtime < 1:4.8.80
 
@@ -116,6 +117,7 @@ that use Nepomuk.
 %changelog
 * Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
 - New version 4.11.0
+- Add ebook-tools-devel to BuildRequires
 
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.5-1
 - New version 4.10.5
