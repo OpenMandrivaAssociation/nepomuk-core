@@ -42,6 +42,9 @@ Nepomuk core utilities and libraries.
 %files
 %doc COPYING*
 %{_datadir}/dbus-1/interfaces/*.xml
+%{_datadir}/dbus-1/system-services/org.kde.nepomuk.filewatch.service
+%{_datadir}/polkit-1/actions/org.kde.nepomuk.filewatch.policy
+%{_sysconfdir}/dbus-1/system.d/org.kde.nepomuk.filewatch.conf
 %{_kde_applicationsdir}/*.desktop
 %{_kde_appsdir}/fileindexerservice
 %{_kde_appsdir}/nepomukfilewatch
@@ -52,11 +55,16 @@ Nepomuk core utilities and libraries.
 %{_kde_libdir}/kde4/nepomukfileindexer.so
 %{_kde_libdir}/kde4/nepomukfilewatch.so
 %{_kde_libdir}/kde4/nepomukstorage.so
+%{_kde_libdir}/kde4/nepomukepubextractor.so
 %{_kde_libdir}/kde4/nepomukexiv2extractor.so
 %{_kde_libdir}/kde4/nepomukffmpegextractor.so
+%{_kde_libdir}/kde4/nepomukmobiextractor.so
+%{_kde_libdir}/kde4/nepomukodfextractor.so
+%{_kde_libdir}/kde4/nepomukoffice2007extractor.so
 %{_kde_libdir}/kde4/nepomukplaintextextractor.so
 %{_kde_libdir}/kde4/nepomukpopplerextractor.so
 %{_kde_libdir}/kde4/nepomuktaglibextractor.so
+%{_kde_libdir}/kde4/libexec/kde_nepomuk_filewatch_raiselimit
 %{_kde_libdir}/libkdeinit4_nepomukserver.so
 %{_kde_libdir}/libnepomukcommon.so
 %{_kde_libdir}/libnepomukextractor.so
@@ -136,6 +144,7 @@ that use Nepomuk.
 - New version 4.11.0
 - Add ebook-tools-devel to BuildRequires
 - New subpackage for libnepomukcleaner
+- Update files list
 
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.5-1
 - New version 4.10.5
