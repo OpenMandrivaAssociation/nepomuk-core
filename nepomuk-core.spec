@@ -17,6 +17,7 @@ BuildRequires:	doxygen
 BuildRequires:	kde4-macros
 BuildRequires:	ebook-tools-devel
 BuildRequires:	kdelibs4-devel
+BuildRequires:	qmobipocket-devel
 BuildRequires:	pkgconfig(soprano) >= 2.7.57
 BuildRequires:	pkgconfig(libstreams) >= 0.7.3
 BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.11
@@ -58,6 +59,7 @@ Nepomuk core utilities and libraries.
 %{_kde_libdir}/kde4/nepomukmobiextractor.so
 %{_kde_libdir}/kde4/nepomukodfextractor.so
 %{_kde_libdir}/kde4/nepomukoffice2007extractor.so
+%{_kde_libdir}/kde4/nepomukofficeextractor.so
 %{_kde_libdir}/kde4/nepomukplaintextextractor.so
 %{_kde_libdir}/kde4/nepomukpopplerextractor.so
 %{_kde_libdir}/kde4/nepomuktaglibextractor.so
@@ -139,6 +141,7 @@ that use Nepomuk.
 %changelog
 * Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.1-1
 - New version 4.12.1
+- Add qmobipocket-devel to BuildRequires, update files
 
 * Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.4-1
 - New version 4.11.4
