@@ -1,7 +1,7 @@
 Summary:	Nepomuk core utilities and libraries
 Name:		nepomuk-core
-Version:	4.12.4
-Release:	1
+Version:	4.13.2
+Release:	2
 Epoch:		1
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
 Group:		Graphical desktop/KDE
@@ -15,8 +15,10 @@ Url:		http://www.kde.org
 Source0:	ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
 BuildRequires:	kde4-macros
+BuildRequires:	baloo-devel
 BuildRequires:	ebook-tools-devel
 BuildRequires:	kdelibs4-devel
+BuildRequires:	kfilemetadata-devel
 BuildRequires:	qmobipocket-devel
 BuildRequires:	pkgconfig(soprano) >= 2.7.57
 BuildRequires:	pkgconfig(libstreams) >= 0.7.3
@@ -139,6 +141,12 @@ that use Nepomuk.
 %makeinstall_std -C build
 
 %changelog
+* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-2
+- Add baloo-devel and kfilemetadata-devel to BuildRequires
+
+* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
+- New version 4.13.2
+
 * Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.4-1
 - New version 4.12.4
 
