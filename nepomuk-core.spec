@@ -1,7 +1,7 @@
 Summary:	Nepomuk core utilities and libraries
 Name:		nepomuk-core
 Version:	4.13.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
 Group:		Graphical desktop/KDE
@@ -20,20 +20,20 @@ BuildRequires:	ebook-tools-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kfilemetadata-devel
 BuildRequires:	qmobipocket-devel
-BuildRequires:	pkgconfig(soprano) >= 2.7.57
-BuildRequires:	pkgconfig(libstreams) >= 0.7.3
-BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.11
+BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(libavcodec)
 BuildRequires:	pkgconfig(libavdevice)
 BuildRequires:	pkgconfig(libavfilter)
 BuildRequires:	pkgconfig(libavformat)
 BuildRequires:	pkgconfig(libavutil)
 BuildRequires:	pkgconfig(libpostproc)
+BuildRequires:	pkgconfig(libstreams) >= 0.7.3
 BuildRequires:	pkgconfig(libswresample)
 BuildRequires:	pkgconfig(libswscale)
-BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(poppler)
 BuildRequires:	pkgconfig(poppler-qt4)
+BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.11
+BuildRequires:	pkgconfig(soprano) >= 2.7.57
 BuildRequires:	pkgconfig(taglib)
 Requires:	shared-desktop-ontologies >= 0.11
 Requires:	soprano >= 4:2.7.57
@@ -85,7 +85,6 @@ with it in any way, so we should not claim we are its successor.
 %package -n %{libnepomukcore}
 Summary:	Nepomuk core library
 Group:		System/Libraries
-Requires:	%{name} = %{EVRD}
 %rename %{libnepomuksync}
 
 %description -n %{libnepomukcore}
@@ -141,6 +140,9 @@ that use Nepomuk.
 %makeinstall_std -C build
 
 %changelog
+* Wed Sep 03 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-2
+- Shared library shouldn't require obsolete nepomuk-core now
+
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-1
 - New version 4.13.3
 
