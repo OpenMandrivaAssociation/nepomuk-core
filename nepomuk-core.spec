@@ -1,7 +1,7 @@
 Summary:	Nepomuk core utilities and libraries
 Name:		nepomuk-core
-Version:	4.13.3
-Release:	3
+Version:	4.14.1
+Release:	1
 Epoch:		1
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
 Group:		Graphical desktop/KDE
@@ -141,6 +141,9 @@ that use Nepomuk.
 %makeinstall_std -C build
 
 %changelog
+* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.1-1
+- New version 4.14.1
+
 * Wed Sep 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-3
 - Devel package should require nepomuk-core
 
