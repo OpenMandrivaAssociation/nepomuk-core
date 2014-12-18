@@ -1,6 +1,6 @@
 Summary:	Nepomuk core utilities and libraries
 Name:		nepomuk-core
-Version:	4.13.3
+Version:	4.14.3
 Release:	1
 Epoch:		1
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
@@ -85,7 +85,6 @@ with it in any way, so we should not claim we are its successor.
 %package -n %{libnepomukcore}
 Summary:	Nepomuk core library
 Group:		System/Libraries
-Requires:	%{name} = %{EVRD}
 %rename %{libnepomuksync}
 
 %description -n %{libnepomukcore}
@@ -114,6 +113,7 @@ Nepomuk cleaner library.
 %package devel
 Summary:	Development files for %{name}
 Group:		Development/KDE and Qt
+Requires:	%{name} = %{EVRD}
 Requires:	%{libnepomukcore} = %{EVRD}
 Requires:	%{libnepomukcleaner} = %{EVRD}
 Conflicts:	kdebase4-runtime-devel < 1:4.8.80
