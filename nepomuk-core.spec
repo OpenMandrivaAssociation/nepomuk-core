@@ -35,6 +35,7 @@ BuildRequires:	pkgconfig(poppler-qt4)
 BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.11
 BuildRequires:	pkgconfig(soprano) >= 2.7.57
 BuildRequires:	pkgconfig(taglib)
+BuildRequires:	qmake5
 Requires:	shared-desktop-ontologies >= 0.11
 Requires:	soprano >= 4:2.7.57
 Conflicts:	kdebase4-runtime < 1:4.8.80
@@ -139,106 +140,3 @@ that use Nepomuk.
 
 %install
 %makeinstall_std -C build
-
-%changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.3-1
-- New version 4.14.3
-
-* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.2-1
-- New version 4.14.2
-
-* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.14.1-1
-- New version 4.14.1
-
-* Wed Sep 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-3
-- Devel package should require nepomuk-core
-
-* Wed Sep 03 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-2
-- Shared library shouldn't require obsolete nepomuk-core now
-
-* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.3-1
-- New version 4.13.3
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-2
-- Add baloo-devel and kfilemetadata-devel to BuildRequires
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
-- New version 4.13.2
-
-* Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.4-1
-- New version 4.12.4
-
-* Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.3-1
-- New version 4.12.3
-
-* Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.2-1
-- New version 4.12.2
-
-* Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.1-1
-- New version 4.12.1
-- Add qmobipocket-devel to BuildRequires, update files
-
-* Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.4-1
-- New version 4.11.4
-
-* Wed Nov 06 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.3-1
-- New version 4.11.3
-
-* Wed Oct 02 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.2-1
-- New version 4.11.2
-
-* Tue Sep 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.1-1
-- New version 4.11.1
-
-* Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.11.0-1
-- New version 4.11.0
-- Add ebook-tools-devel to BuildRequires
-- New subpackage for libnepomukcleaner
-- Update files list
-
-* Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.5-1
-- New version 4.10.5
-
-* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.4-1
-- New version 4.10.4
-
-* Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.3-1
-- New version 4.10.3
-- Update files
-
-* Wed Apr 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.2-1
-- New version 4.10.2
-
-* Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.1-1
-- New version 4.10.1
-
-* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.10.0-1
-- New version 4.10.0
-- Obsolete libnepomuksync subpackage
-- Add more BuildRequires
-- Update files
-
-* Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.9.4-1
-- New version 4.9.4
-
-* Wed Nov 07 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.9.3-1
-- New version 4.9.3
-
-* Thu Oct 04 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.9.2-1
-- New version 4.9.2
-
-* Sat Sep 08 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.9.1-1
-- New version 4.9.1
-
-* Sat Aug 04 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.9.0-1
-- New version 4.9.0
-
-* Thu Jul 12 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.8.97-1
-- New version 4.8.97
-- Convert some BuildRequires to pkgconfig style
-
-* Thu Jun 28 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.8.95-1
-- Update to 4.8.95
-
-* Wed Jun 20 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.8.90-1
-- Initial Rosa package
