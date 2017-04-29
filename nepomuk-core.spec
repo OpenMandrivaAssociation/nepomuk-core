@@ -36,6 +36,7 @@ BuildRequires:	pkgconfig(shared-desktop-ontologies) >= 0.11
 BuildRequires:	pkgconfig(soprano) >= 2.7.57
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	qmake5
+BuildRequires:	cmake(KF5I18n)
 Requires:	shared-desktop-ontologies >= 0.11
 Requires:	soprano >= 4:2.7.57
 Conflicts:	kdebase4-runtime < 1:4.8.80
