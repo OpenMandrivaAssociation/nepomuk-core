@@ -1,7 +1,7 @@
 Summary:	Nepomuk core utilities and libraries
 Name:		nepomuk-core
 Version:	4.14.3
-Release:	7
+Release:	8
 Epoch:		1
 License:	GPLv2 GPLv3 LGPLv2 LGPLv3
 Group:		Graphical desktop/KDE
@@ -60,7 +60,7 @@ Nepomuk core utilities and libraries.
 %{_kde_libdir}/kde4/nepomukepubextractor.so
 %{_kde_libdir}/kde4/nepomukexiv2extractor.so
 %{_kde_libdir}/kde4/nepomukffmpegextractor.so
-%{_kde_libdir}/kde4/nepomukmobiextractor.so
+%optional %{_kde_libdir}/kde4/nepomukmobiextractor.so
 %{_kde_libdir}/kde4/nepomukodfextractor.so
 %{_kde_libdir}/kde4/nepomukoffice2007extractor.so
 %{_kde_libdir}/kde4/nepomukofficeextractor.so
@@ -138,6 +138,11 @@ that use Nepomuk.
 
 %build
 %cmake_kde4
+# Setting PATH, MOC, QMAKE, etc. all doesn't help :/
+find . -name build.make |while read r; do
+	sed -i -e 's,%{_libdir}/qt5/bin/moc,%{_prefix}/lib/qt4/bin/moc,g' "$r"
+done
+%make
 
 %install
 %makeinstall_std -C build
